@@ -4,7 +4,7 @@ import reportportal.models.Test;
 
 import java.util.List;
 
-public interface TestService {
+public interface TestsService {
 
     Test getTestById(int id);
 

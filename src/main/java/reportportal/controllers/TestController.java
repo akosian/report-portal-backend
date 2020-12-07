@@ -2,7 +2,7 @@ package reportportal.controllers;
 
 import org.springframework.web.bind.annotation.*;
 import reportportal.models.Test;
-import reportportal.services.tests.TestService;
+import reportportal.services.tests.TestsService;
 
 import java.util.List;
 
@@ -10,19 +10,19 @@ import java.util.List;
 @RequestMapping("/api/tests")
 public class TestController {
 
-    private TestService testService;
+    private TestsService testsService;
 
-    public TestController(TestService service) {
-        this.testService = service;
+    public TestController(TestsService service) {
+        this.testsService = service;
     }
 
     @GetMapping
     public List<Test> getTest() {
-        return testService.getTests();
+        return testsService.getTests();
     }
 
     @PostMapping
     public Test addTest(@RequestBody Test test) {
-        return testService.addTest(test);
+        return testsService.addTest(test);
     }
 }

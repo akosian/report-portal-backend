@@ -4,11 +4,11 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
-import reportportal.dao.tests.TestDao;
+import reportportal.dao.tests.TestsDao;
 import reportportal.dao.users.UsersDao;
 import reportportal.models.Test;
 import reportportal.models.User;
-import reportportal.services.tests.TestService;
+import reportportal.services.tests.TestsService;
 import reportportal.services.users.UsersService;
 
 @org.springframework.context.annotation.Configuration
@@ -22,8 +22,8 @@ public class AppConfiguration {
                 .addAnnotatedClass(UsersDao.class)
                 .addAnnotatedClass(UsersService.class)
                 .addAnnotatedClass(User.class)
-                .addAnnotatedClass(TestDao.class)
-                .addAnnotatedClass(TestService.class)
+                .addAnnotatedClass(TestsDao.class)
+                .addAnnotatedClass(TestsService.class)
                 .addAnnotatedClass(Test.class)
                 .buildSessionFactory();
     }

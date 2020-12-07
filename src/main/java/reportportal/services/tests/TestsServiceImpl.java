@@ -1,42 +1,42 @@
 package reportportal.services.tests;
 
 import org.springframework.stereotype.Service;
-import reportportal.dao.tests.TestDao;
+import reportportal.dao.tests.TestsDao;
 import reportportal.models.Test;
 
 import java.util.List;
 
 @Service
-public class TestServiceImpl implements TestService {
+public class TestsServiceImpl implements TestsService {
 
-    private TestDao testDao;
+    private TestsDao testsDao;
 
-    public TestServiceImpl(TestDao testDao) {
-        this.testDao = testDao;
+    public TestsServiceImpl(TestsDao testsDao) {
+        this.testsDao = testsDao;
     }
 
     @Override
     public Test getTestById(int id) {
-        return testDao.getTestById(id);
+        return testsDao.getTestById(id);
     }
 
     @Override
     public List<Test> getTests() {
-        return testDao.getTests();
+        return testsDao.getTests();
     }
 
     @Override
     public Test addTest(Test test) {
-        return testDao.addTest(test);
+        return testsDao.addTest(test);
     }
 
     @Override
     public void deleteTest(int id) {
-        testDao.removeTest(id);
+        testsDao.removeTest(id);
     }
 
     @Override
     public void updateTest(Test test) {
-        testDao.updateTest(test);
+        testsDao.updateTest(test);
     }
 }

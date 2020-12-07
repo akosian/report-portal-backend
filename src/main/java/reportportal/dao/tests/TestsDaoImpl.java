@@ -8,11 +8,11 @@ import reportportal.models.Test;
 import java.util.List;
 
 @Repository
-public class TestDaoImpl implements TestDao {
+public class TestsDaoImpl implements TestsDao {
 
     private final SessionFactory sessionFactory;
 
-    public TestDaoImpl(SessionFactory sessionFactory) {
+    public TestsDaoImpl(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
 
@@ -53,7 +53,6 @@ public class TestDaoImpl implements TestDao {
         finishSession(session);
         return test;
     }
-
 
     private void finishSession(Session session) {
         session.getTransaction().commit();

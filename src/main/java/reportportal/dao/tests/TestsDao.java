@@ -4,7 +4,7 @@ import reportportal.models.Test;
 
 import java.util.List;
 
-public interface TestDao {
+public interface TestsDao {
 
     List<Test> getTests();
 

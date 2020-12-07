@@ -10,35 +10,35 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
-@Table(name = "tests")
-public class Test {
+@Table(name = "test_runs")
+public class TestRun {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
-    @Column(name = "summary")
-    private String summary;
+    @Column(name = "name")
+    private String name;
 
     @ManyToMany(fetch = FetchType.LAZY,
             cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
     @JoinTable(name = "testruns_tests",
-            joinColumns = @JoinColumn(name = "test_id"),
-            inverseJoinColumns = @JoinColumn(name = "testrun_id"))
-    private List<TestRun> testRuns;
+            joinColumns = @JoinColumn(name = "testrun_id"),
+            inverseJoinColumns = @JoinColumn(name = "test_id"))
+    private List<Test> tests;
 
-    public Test() {
+    public TestRun() {
     }
 
-    public Test(String summary) {
-        this.summary = summary;
+    public TestRun(String name) {
+        this.name = name;
     }
 
-    public void addTestRun(TestRun testRun) {
-        if (testRuns == null) {
-            testRuns = new ArrayList<>();
+    public void addTest(Test test) {
+        if (tests == null) {
+            tests = new ArrayList<>();
         }
-        testRuns.add(testRun);
+        tests.add(test);
     }
 }
