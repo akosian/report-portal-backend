@@ -7,7 +7,7 @@ import reportportal.services.testruns.TestRunsService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/testruns")
+@RequestMapping("/api/testruns")
 public class TestRunsController {
 
     private TestRunsService testRunsService;

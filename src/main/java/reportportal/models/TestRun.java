@@ -2,6 +2,7 @@ package reportportal.models;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.Proxy;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -11,6 +12,7 @@ import java.util.List;
 @Setter
 @Entity
 @Table(name = "test_runs")
+@Proxy(lazy = false)
 public class TestRun {
 
     @Id
